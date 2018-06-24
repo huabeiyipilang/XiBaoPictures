@@ -1,0 +1,19 @@
+{
+  "category_list": [
+    {
+      "id": 1,
+      "name": "动物",
+      "poster": "file:///android_asset/category_posters/category_poster_animal.jpg"
+    },
+    {
+      "id": 2,
+      "name": "水果蔬菜",
+      "poster": "file:///android_asset/category_posters/category_poster_cars.jpg"
+    },
+    {
+      "id": 3,
+      "name": "交通工具",
+      "poster": "file:///android_asset/category_posters/category_poster_fruit.jpg"
+    }
+  ]
+}
