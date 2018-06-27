@@ -8,12 +8,12 @@
     {
       "id": 2,
       "name": "水果蔬菜",
-      "poster": "file:///android_asset/category_posters/category_poster_cars.jpg"
+      "poster": "file:///android_asset/category_posters/category_poster_fruit.jpg"
     },
     {
       "id": 3,
       "name": "交通工具",
-      "poster": "file:///android_asset/category_posters/category_poster_fruit.jpg"
+      "poster": "file:///android_asset/category_posters/category_poster_cars.jpg"
     }
   ]
 }
