@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion 27
@@ -72,4 +71,6 @@ dependencies {
     // umeng
     implementation 'com.umeng.sdk:common:1.5.3'
     implementation 'com.umeng.sdk:analytics:7.5.3'
+    // volley
+    implementation 'com.android.volley:volley:1.1.0'
 }
