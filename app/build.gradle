@@ -8,13 +8,44 @@ android {
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0"
+        versionName "0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        debug {
+            keyAlias 'debug'
+            keyPassword 'wowangle'
+            storeFile file('sign.jks')
+            storePassword 'zhenjiba2'
+        }
+        release {
+            keyAlias 'release'
+            keyPassword 'zhenjiba2'
+            storeFile file('sign.jks')
+            storePassword 'zhenjiba2'
+        }
+    }
     buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
         release {
             minifyEnabled false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions "default"
+    productFlavors {
+        dev { dimension "default" }
+        wandoujia { dimension "default" }
+        baidu { dimension "default" }
+        c360 { dimension "default" }
+        uc { dimension "default" }
+        gp { dimension "default" }
+
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [apk_channel: name]
         }
     }
 }
@@ -38,4 +69,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
     // lottie
     implementation 'com.airbnb.android:lottie:2.5.5'
+    // umeng
+    implementation 'com.umeng.sdk:common:1.5.3'
+    implementation 'com.umeng.sdk:analytics:7.5.3'
 }
