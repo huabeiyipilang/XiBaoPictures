@@ -14,14 +14,19 @@
             android:name="apk_channel"
             android:value="${apk_channel}" />
 
-        <activity android:name=".MainActivity">
+        <!--<activity android:name=".MainActivity">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <activity android:name=".category.CategoryListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".category.CategoryListActivity" />
         <activity
             android:name=".category.gallary.CategoryActivity"
             android:theme="@style/AppTheme.NoActionBar" />
