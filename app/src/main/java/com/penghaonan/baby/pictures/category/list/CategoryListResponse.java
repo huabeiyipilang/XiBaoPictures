@@ -1,4 +1,4 @@
-package com.penghaonan.baby.pictures.category;
+package com.penghaonan.baby.pictures.category.list;
 
 import java.util.List;
 

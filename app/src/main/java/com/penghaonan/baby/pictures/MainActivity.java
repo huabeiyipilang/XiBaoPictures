@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.penghaonan.baby.pictures.base.BaseActivity;
-import com.penghaonan.baby.pictures.category.CategoryListActivity;
+import com.penghaonan.baby.pictures.category.list.CategoryListActivity;
 
 public class MainActivity extends BaseActivity {
 

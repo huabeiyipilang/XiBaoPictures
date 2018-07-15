@@ -16,6 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
+import com.iflytek.cloud.SpeechSynthesizer;
 import com.penghaonan.appframework.utils.UiUtils;
 import com.penghaonan.baby.pictures.R;
 import com.penghaonan.baby.pictures.UrlConstants;
@@ -51,7 +52,6 @@ public class CategoryActivity extends BaseActivity {
         ButterKnife.bind(this);
         mCategoryName = getIntent().getStringExtra(EXTRAS_CATEGORY_NAME);
         loadData();
-
     }
 
     private void loadData() {
@@ -107,6 +107,28 @@ public class CategoryActivity extends BaseActivity {
         mViewPager.setVisibility(View.VISIBLE);
         mAdapter = new PicAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mAdapter);
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                speakCardAtPostion(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+        speakCardAtPostion(mViewPager.getCurrentItem());
+    }
+
+    private void speakCardAtPostion(int position) {
+        SpeechSynthesizer.getSynthesizer().stopSpeaking();
+        SpeechSynthesizer.getSynthesizer().startSpeaking(mPicList.get(position).name, null);
     }
 
     private class PicAdapter extends FragmentStatePagerAdapter {
