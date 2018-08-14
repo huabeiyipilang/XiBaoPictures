@@ -15,10 +15,12 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.iflytek.cloud.SpeechSynthesizer;
 import com.penghaonan.baby.pictures.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class CategoryPicFragment extends Fragment {
     private static final String ARG_TITLE = "title";
@@ -63,6 +65,12 @@ public class CategoryPicFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_category_pic, container, false);
         ButterKnife.bind(this, root);
         return root;
+    }
+
+    @OnClick(R.id.iv_pic)
+    void speakCard() {
+        SpeechSynthesizer.getSynthesizer().stopSpeaking();
+        SpeechSynthesizer.getSynthesizer().startSpeaking(mTitle, null);
     }
 
     @Override
